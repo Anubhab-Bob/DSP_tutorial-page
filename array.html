@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Arrays</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="parent_div">
+            <a href="index.html">Home</a>
+            <div class="child_div">
+                <h2>Coursework for Arrays</h2><br>
+                <hr>
+                <br>
+                <p>
+                    You already know about variables. A variable is a named memory location to store a single value in
+                    memory. But many a times, we need a set of values together as a unit. Arrays come handy in such
+                    situations.<br>
+                    An array is defined as the collection of similar type of data items stored at contiguous memory
+                    locations. All arrays consist of contiguous memory locations. The lowest address corresponds to the
+                    first element and the highest
+                    address to the last element. Arrays are the derived data type in C programming language which can
+                    store the primitive type of data such as int, char, double, float, etc. It also has the capability
+                    to store the collection of derived data types, such as pointers, structure, etc.<br>
+                    As said earlier, array is beneficial if you have to store similar elements. For example, if we want
+                    to store the marks of a student in 6 subjects, then we don't need to define different variables for
+                    the marks in the different subject. Instead of that, we can define an array which can store the
+                    marks in each subject at the contiguous memory locations.<br>
+                    <img src="https://www.programiz.com/sites/tutorial2program/files/c-arrays.jpg" alt="array">
+                    <br>
+                </p>
+                <br>
+                <hr>
+                <br>
+                <h4>Properties of Arrays</h4><br>
+                <p>
+                <ol>
+                    <li>1. Each element of an array is of same data type and carries the same size, i.e., int = 4 bytes.
+                    </li>
+                    <li>2. Elements of the array are stored at contiguous memory locations where the first element is
+                        stored at the smallest memory location.</li>
+                    <li>3. Elements of the array can be randomly accessed since we can calculate the address of each
+                        element of the array with the given base address and the size of the data element.</li>
+                </ol>
+                </p>
+                <br>
+                <hr>
+                <br>
+                <h4>Declaration and Initialization of Arrays</h4>
+                <br>
+                <p>
+                    To declare an array in C, a programmer specifies the type of the elements and the number of elements
+                    required by an array as follows -
+                <div class="code">type arrayName [ arraySize ];</div>
+                This is called a single-dimensional array. The arraySize must be an integer constant greater than zero
+                and type can be any valid C data type. For example, to declare a 10-element array called balance of type
+                double, use this statement −
+                <div class="code">double balance[10];</div>
+                Here balance is a variable array which is sufficient to hold up to 10 double numbers.
+                You can initialize an array in C either one by one or using a single statement as follows −
+                <div class="code">double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};</div>
+                The number of values between braces { } cannot be larger than the number of elements that we declare for
+                the array
+                between square brackets [ ]. If you omit the size of the array, an array just big enough to hold the
+                initialization is created. Therefore, if you write −
+                <div class="code">double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};</div>
+                You will create exactly the same array as you did in the previous example. Following is an example to
+                assign a single element of the array −
+                <div class="code">balance[4] = 50.0;</div>
+                The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the
+                index of their first element which is also called the base index and the last index of an array will be
+                total size of the array minus 1. Shown below is the pictorial representation of the array we discussed
+                above −
+                <br>
+                <img src="https://www.tutorialspoint.com/cprogramming/images/array_presentation.jpg" alt="array">
+                </p>
+                <br><br>
+                <hr>
+                <hr>
+                <br>
+                <div class="link">
+                    <h4>For more information please go through the following links -</h4>
+                    <br>
+                    <ol>
+                        <li><a href="https://www.javatpoint.com/c-array">1. JavatPoint Tutorial on C arrays</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/arrays-in-c-cpp/">2. Geeks for Geeks Tutorial on C
+                                and C++ arrays</a></li>
+                        <li><a href="https://www.programiz.com/c-programming/c-arrays">3. Programwiz Tutorial on C
+                                arrays</a>
+                        </li>
+                    </ol>
+                </div>
+                <br>
+                <h4>You may also like to go through this video tutorial:</h4>
+                <br>
+
+                <div class="vid"><iframe width="560" height="315" src="https://www.youtube.com/embed/0EgpeYB115s?"
+                        title="YouTube video player" frameborder="5"></iframe></div>
+                <br>
+                <p>
+                    Contact School of Computer and Information Sciences, University of Hyderabad and submit an
+                    application with your roll number, semester, course id, course name to register for the complete
+                    course.
+                </p>
+            </div>
+        </div>
+    </body>
+
+</html>

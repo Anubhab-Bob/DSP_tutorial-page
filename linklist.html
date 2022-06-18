@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Linked Lists</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="parent_div">
+            <a href="index.html">Home</a>
+            <div class="child_div">
+                <h2>Coursework for Linked Lists</h2><br>
+                <hr>
+                <br>
+                <p>
+                    We have covered Arrays in our previous week as part of this course. In this week we shall try to
+                    understand a few limitations of Arrays and how they can be overcome using another data structure
+                    called linked list.<br>
+                    A linked list is a sequence of data structures, which are connected together via links. Linked List
+                    is a sequence of links which contains items. Each link contains a connection to another link. Linked
+                    list is the second most-used data structure after array. The size of the linked list is not fixed,
+                    and data items can be added at any locations in the list. The disadvantage is that to get to a node,
+                    we must traverse to all the way from the first node to the node that we require. The Linked List is
+                    like an array but unlike an array, it is not stored sequentially in the memory.<br>
+                    A linked list is a linear data structure that includes a series of connected nodes. Here, each node
+                    stores the data and the address of the next node. You have to start somewhere, so we give the
+                    address of the first node a special name called HEAD. Also, the last node in the linked list can be
+                    identified because its next portion points to NULL as shown below.<br>
+                    <img src="https://cdn.programiz.com/sites/tutorial2program/files/linked-list-concept.png"
+                        alt="list">
+                    <br>
+                </p>
+                <br>
+                <hr>
+                <br>
+                <h4>Properties of Linked Lists</h4><br>
+                <p>
+                <ol>
+                    <li>1. The list is not required to be contiguously present in the memory. The node can reside any
+                        where in the memory and linked together to make a list. This achieves optimized utilization of
+                        space.</li>
+                    <li>2. List size is limited to the memory size and doesn't need to be declared in advance.</li>
+                    <li>3. Empty node can not be present in the linked list.</li>
+                    <li>4. We can store values of primitive types or objects in the singly linked list.</li>
+                </ol>
+                </p>
+                <br>
+                <hr>
+                <br>
+                <h4>Representation, Declaration and Initialization of Linked Lists</h4>
+                <br>
+                <p>
+                    Let's see how each node of the linked list is represented. Each node consists: a data item and an
+                    address of another node. We wrap both the data item and the next node reference in a struct as:
+                <div class="code">
+                    struct node { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;int data; <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;struct node *next; <br>
+                    };<br>
+                </div>
+                To declare a linked list in C, a programmer specifies the data type of the node, i.e., struct node
+                followed by a pointer name as follows -
+                <div class="code">struct node *pointerName;</div>
+                For example, to declare 2 linked list pointers having nodes of the type given previously, use this
+                statement −
+                <div class="code">struct node *head, *ptr;</div>
+                Since these lists are handled with pointers, only declaration do not suffice. Memory also has to be
+                allocated dynamically for each node like this - <br>
+                <div class="code">ptr = (struct node *)malloc(sizeof(struct node *));</div>
+                The malloc () is used for dynamic memory allocation and is present in the stdlib header file in C. So
+                make sure you include stdlib header file whenever you are writing a program on linked lists.
+                The following code is an example code showing declaration and initialisation of linked lists -
+                <div class="code">
+                    #include <stdio.h> <br>
+                        #include <stdlib.h><br>
+                            struct person {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;int age;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;float weight;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;char name[30];<br>
+                            };<br>
+
+                            int main() {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;struct person *ptr;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;int i, n;<br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;printf("Enter the number of persons: ");<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;scanf("%d", &n);<br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;// allocating memory for n numbers of struct person<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;ptr = (struct person*) malloc(n * sizeof(struct person));<br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i < n; ++i) { <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Enter first name and age
+                                respectively: "); <br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// To access members of 1st struct
+                                person,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ptr->name and ptr->age is used<br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// To access members of 2nd struct
+                                person,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// (ptr+1)->name and (ptr+1)->age is
+                                used<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scanf(" %s %d", (ptr+i)->name,
+                                &(ptr+i)->age);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;printf("Displaying Information:\n");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i < n; ++i) <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("Name: %s\tAge: %d\n",
+                                    (ptr+i)->name, (ptr+i)->age);<br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+                                    }<br>
+                </div>
+                </p>
+                <br>
+                <hr>
+                <br>
+                <h4>Operations of Linked Lists</h4>
+                <br>
+                <p>
+                    The insertion into a singly linked list can be performed at different positions. Based on the
+                    position of the new node being inserted, the insertion is categorized into the following categories
+                    -
+                    <img src="img1.jpg" alt="list">
+                    The Deletion of a node from a singly linked list can be performed at different positions. Based on
+                    the position of the node being deleted, the operation is categorized into the following categories -
+                    <img src="img2.jpg" alt="list">
+                </p>
+                <br><br>
+                <hr>
+                <hr>
+                <br>
+                <div class="link">
+                    <h4>For more information please go through the following links -</h4>
+                    <br>
+                    <ol>
+                        <li><a href="https://www.programiz.com/c-programming/c-structures-pointers">1. JavatPoint
+                                Tutorial on C pointers and structures</a></li>
+                        <li><a href="https://www.geeksforgeeks.org/linked-list-set-1-introduction/">2. Geeks for Geeks
+                                Tutorial on Linked Lists Introuduction</a></li>
+                        <li><a href="https://www.edureka.co/blog/linked-list-in-c/">3. Complete implementation example
+                                in Edureka.</a>
+                        </li>
+                        <li><a href="https://www.javatpoint.com/singly-linked-list">4. JavatPoint Tutorial on C linked
+                                lists</a></li>
+                    </ol>
+                </div>
+                <br>
+                <h4>You may also like to go through this video tutorial:</h4>
+                <br>
+
+                <div class="vid"><iframe width="560" height="315" src="https://www.youtube.com/embed/7Fz7JSvlr9g"
+                        title="YouTube video player" frameborder="5"></iframe></div>
+                <br>
+                <p>
+                    Contact School of Computer and Information Sciences, University of Hyderabad and submit an
+                    application with your roll number, semester, course id, course name to register for the complete
+                    course.
+                </p>
+            </div>
+        </div>
+    </body>
+
+</html>
